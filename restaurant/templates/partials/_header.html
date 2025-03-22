@@ -1,0 +1,76 @@
+{% load static %}
+<!-- Header/Navbar -->
+<header class="fixed w-full bg-white shadow-md z-50">
+    <nav class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between max-w-4xl mx-auto">
+            <!-- Left Navigation -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="{% url 'home' %}" class="text-gray-700 hover:text-yellow-500 transition-all duration-300 px-2 py-1 border-b-2 border-transparent hover:border-yellow-500">
+                    <span class="font-medium">HOME</span>
+                </a>
+                <a href="{% url 'menu' %}" class="text-gray-700 hover:text-yellow-500 transition-all duration-300 px-2 py-1 border-b-2 border-transparent hover:border-yellow-500">
+                    <span class="font-medium">MENU</span>
+                </a>
+            </div>
+
+            <!-- Center Logo -->
+            <div class="flex items-center justify-center px-4">
+                <a href="{% url 'home' %}" class="flex items-center space-x-2">
+                    <img src="{% static 'images/restro-logo.jpeg' %}" alt="Elite Kitchen Logo" class="h-12 w-auto rounded-full">
+                    <span class="text-2xl font-bold text-gray-800 font-cursive">Elite Kitchen</span>
+                </a>
+            </div>
+
+            <!-- Right Navigation -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="{% url 'about' %}" class="text-gray-700 hover:text-yellow-500 transition-all duration-300 px-2 py-1 border-b-2 border-transparent hover:border-yellow-500">
+                    <span class="font-medium">ABOUT US</span>
+                </a>
+                <a href="{% url 'book' %}" class="text-gray-700 hover:text-yellow-500 transition-all duration-300 px-2 py-1 border-b-2 border-transparent hover:border-yellow-500">
+                    <span class="font-medium">BOOK NOW</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:text-yellow-500 focus:outline-none">
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4">
+            <div class="flex flex-col space-y-4 bg-white rounded-lg p-4 shadow-xl">
+                <a href="{% url 'home' %}" class="text-gray-700 hover:text-yellow-500 transition-colors duration-300 py-2 px-4 border-l-4 border-transparent hover:border-yellow-500">HOME</a>
+                <a href="{% url 'menu' %}" class="text-gray-700 hover:text-yellow-500 transition-colors duration-300 py-2 px-4 border-l-4 border-transparent hover:border-yellow-500">MENU</a>
+                <a href="{% url 'about' %}" class="text-gray-700 hover:text-yellow-500 transition-colors duration-300 py-2 px-4 border-l-4 border-transparent hover:border-yellow-500">ABOUT US</a>
+                <a href="{% url 'book' %}" class="text-gray-700 hover:text-yellow-500 transition-colors duration-300 py-2 px-4 border-l-4 border-transparent hover:border-yellow-500">BOOK NOW</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Add padding to main content to account for fixed header -->
+<div class="h-16"></div>
+
+<!-- Mobile Menu JavaScript -->
+<script>
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    let isMenuOpen = false;
+
+    mobileMenuButton.addEventListener('click', function() {
+        isMenuOpen = !isMenuOpen;
+        mobileMenu.classList.toggle('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target) && isMenuOpen) {
+            mobileMenuButton.click();
+        }
+    });
+</script>

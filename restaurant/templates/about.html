@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative h-[60vh] flex items-center justify-center">
+    <div class="absolute inset-0">
+        <img src="{% static 'images/about-hero.jpg' %}" alt="Restaurant Interior" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+    <div class="relative text-center text-white px-4">
+        <h1 class="text-5xl md:text-6xl font-bold mb-4 font-cursive">Our Story</h1>
+        <p class="text-xl md:text-2xl">A Culinary Journey of Passion and Excellence</p>
+    </div>
+</section>
+
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Origin Story -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Our Beginning</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Founded in 2024, Elite Kitchen emerged from a simple dream: to create a dining experience that combines the warmth of Mediterranean hospitality with contemporary culinary innovation. Our journey began in a small kitchen in Nepal, where our founder's passion for authentic flavors and modern dining experiences took root.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    What started as a humble family restaurant has grown into a beloved culinary destination, serving both locals and visitors who share our appreciation for exceptional food and memorable dining experiences.
+                </p>
+            </div>
+            <div class="relative">
+                <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Restaurant Interior" class="w-full h-[400px] object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Culinary Vision -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative order-2 md:order-1">
+                <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Chef Cooking" class="w-full h-[400px] object-cover rounded-lg shadow-xl">
+            </div>
+            <div class="space-y-6 order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-gray-900">Our Culinary Vision</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    At Elite Kitchen, we believe in the power of authentic flavors and innovative cooking techniques. Our menu is a celebration of Mediterranean cuisine, reimagined for the modern palate. Each dish tells a story, combining traditional recipes with contemporary culinary artistry.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Our chefs bring years of experience and a passion for excellence to every plate, ensuring that each visit to Elite Kitchen is an unforgettable culinary journey.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality & Ingredients -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Quality & Ingredients</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    We take pride in sourcing the finest ingredients from local producers and trusted suppliers. Our commitment to quality means that every ingredient is carefully selected for its freshness, flavor, and sustainability.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    From our hand-picked herbs to our carefully selected meats and seafood, we ensure that every component of your meal meets our high standards of excellence.
+                </p>
+            </div>
+            <div class="relative">
+                <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Fresh Ingredients" class="w-full h-[400px] object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Ambiance & Experience -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="relative order-2 md:order-1">
+                <img src="{% static 'images/dining-room.jpeg' %}" alt="Dining Room" class="w-full h-[400px] object-cover rounded-lg shadow-xl">
+            </div>
+            <div class="space-y-6 order-1 md:order-2">
+                <h2 class="text-3xl font-bold text-gray-900">Ambiance & Experience</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Step into Elite Kitchen and discover an atmosphere that perfectly balances elegance with comfort. Our thoughtfully designed space features warm lighting, comfortable seating, and subtle Mediterranean-inspired decor that creates an inviting environment for your dining experience.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    Whether you're celebrating a special occasion or enjoying a casual meal with friends, our attentive staff ensures that every visit is memorable.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community & Values -->
+    <section class="mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-bold text-gray-900">Community & Values</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    At Elite Kitchen, we believe in giving back to our community. We partner with local food banks, participate in community events, and support sustainable farming practices. Our commitment to environmental responsibility extends to our operations, where we implement eco-friendly practices throughout our restaurant.
+                </p>
+                <p class="text-gray-600 leading-relaxed">
+                    We value our customers as family and strive to create an inclusive, welcoming environment where everyone feels at home.
+                </p>
+            </div>
+            <div class="relative">
+                <img src="{% static 'images/community.jpeg' %}" alt="Community" class="w-full h-[400px] object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center bg-gray-50 rounded-xl p-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">Join Us for an Unforgettable Experience</h2>
+        <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Experience the perfect blend of tradition and innovation at Elite Kitchen. We invite you to make a reservation and discover why our guests keep coming back for more.
+        </p>
+        <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+            Make a Reservation
+        </a>
+    </section>
+</div>
+{% endblock %}

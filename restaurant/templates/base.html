@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'images/restro-logo.jpeg' %}">
+    <title>Elite Kitchen</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yellow': {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        'display': ['Poppins', 'sans-serif'],
+                        'body': ['Inter', 'sans-serif'],
+                        'logo': ['Montserrat', 'sans-serif'],
+                        'accent': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    {% load static %}
+</head>
+<body class="min-h-screen flex flex-col bg-white bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0wIDBoNDB2NDBIMHoiLz48cGF0aCBkPSJNMjAgMjBhMSAxIDAgMTAwLTIgMSAxIDAgMDAwIDJ6IiBmaWxsPSIjZjVmNWY1Ii8+PC9nPjwvc3ZnPg==')]" class="font-body">
+    {%include 'partials/_header.html' %}
+    <main class="flex-grow">
+        {% block content %}
+
+        {% endblock %}
+    </main>
+    {%include 'partials/_footer.html' %}
+</body>
+</html>

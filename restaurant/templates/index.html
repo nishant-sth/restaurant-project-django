@@ -1,0 +1,296 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero Section -->
+<section class="relative h-screen">
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="{% static 'images/home.jpg' %}" alt="Restaurant Background" class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+    </div>
+    
+    <!-- Hero Content -->
+    <div class="relative h-full flex items-center justify-center text-center text-white px-4">
+        <div class="max-w-4xl">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 font-cursive">Serving You Love</h1>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6">The Best Tasting Experience!</h2>
+            <p class="text-xl mb-8 text-gray-200">Discover an unforgettable fine dining experience located in Nepal. We have a passionate elegance and the most luxurious meals to enjoy.</p>
+            <div class="space-x-4">
+                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    BOOK A TABLE
+                </a>
+                <a href="{% url 'menu' %}" class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
+                    VIEW MENU
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Opening Hours & Location Strip -->
+<section class="bg-yellow-500 text-black py-4">
+    <div class="container mx-auto px-4">
+        <div class="flex flex-wrap justify-center items-center gap-8 text-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span class="font-semibold">Open Today: 12:00 PM - 11:00 PM</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span class="font-semibold">Bhakta Marga, Kathmandu, Nepal</span>
+            </div>
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+                <span class="font-semibold">+977 9818000000</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="text-center">
+                <div class="mb-4">
+                    <img src="{% static 'images/quality-food.jpg' %}" alt="Quality Food" class="w-50 h-40 mx-auto rounded-full object-cover">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Quality Food</h3>
+                <p class="text-gray-600">Experience the finest ingredients prepared with passion</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="text-center">
+                <div class="mb-4">
+                    <img src="{% static 'images/master-cheif.jpg' %}" alt="Master Chefs" class="w-50 h-40 mx-auto rounded-full object-cover">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Master Chefs</h3>
+                <p class="text-gray-600">Our expert chefs create culinary masterpieces</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="text-center">
+                <div class="mb-4">
+                    <img src="{% static 'images/atomsphere.jpg' %}" alt="Perfect Atmosphere" class="w-50 h-40 mx-auto rounded-full object-cover">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Perfect Atmosphere</h3>
+                <p class="text-gray-600">Enjoy your meal in our elegant and comfortable setting</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Special Offers Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Special Offers</h2>
+            <p class="text-gray-600">Discover our exclusive deals and seasonal specials</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Offer 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/dining-room.jpeg' %}" alt="Weekend Brunch" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Weekend Brunch Special</h3>
+                    <p class="text-gray-600 mb-4">Enjoy our exclusive weekend brunch with complimentary champagne</p>
+                    <p class="text-yellow-500 font-bold text-lg mb-4">$35 per person</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+            <!-- Offer 2 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Chef's Special" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Chef's Tasting Menu</h3>
+                    <p class="text-gray-600 mb-4">5-course tasting menu with wine pairing</p>
+                    <p class="text-yellow-500 font-bold text-lg mb-4">$89 per person</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+            <!-- Offer 3 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Date Night" class="w-full h-48 object-cover">
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2">Date Night Special</h3>
+                    <p class="text-gray-600 mb-4">3-course dinner for two with a bottle of wine</p>
+                    <p class="text-yellow-500 font-bold text-lg mb-4">$120 per couple</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                        Book Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Preview Section with Chef -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                <h2 class="text-4xl font-bold">Welcome to Elite Kitchen</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Experience the authentic flavors of Mediterranean cuisine in a modern and elegant setting. Our restaurant combines traditional recipes with contemporary cooking techniques to create unforgettable dining experiences.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Fresh, locally-sourced ingredients</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Award-winning wine selection</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        <span>Private dining rooms available</span>
+                    </div>
+                </div>
+                <a href="{% url 'about' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    Learn More
+                </a>
+            </div>
+            <div class="relative">
+                <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Our Chef" class="rounded-lg shadow-xl">
+                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
+                    <p class="font-bold text-lg">Chef Michael Anderson</p>
+                    <p class="text-gray-600">Executive Chef</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">What Our Guests Say</h2>
+            <p class="text-gray-600">Read reviews from our valued customers</p>
+        </div>
+        <div class="testimonial-container overflow-hidden relative w-full max-w-5xl mx-auto">
+            <!-- Outer container with width set to show 4 testimonials -->
+            <div class="relative overflow-hidden">
+                <!-- Inner scrolling container -->
+                <div class="testimonial-wrapper flex space-x-4 animate-scroll" id="testimonialSlider">
+                    {% for data in testimonials %}
+                        <div class="bg-white p-6 rounded-lg shadow-lg min-w-[310px]">
+                            <div class="flex items-center mb-4">
+                                <div class="text-yellow-500">
+                                    {% for _ in "x"|rjust:data.rating %}★{% endfor %}
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-4">"{{ data.testimonial }}"</p>
+                            <div class="font-semibold">{{ data.name }}</div>
+                            <div class="text-sm text-gray-500">{{ data.role }}</div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <style>
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(calc(-310px - 2rem)); /* Width of one testimonial + margin */
+                }
+            }
+        
+            .animate-scroll {
+                animation: scroll 40s linear infinite;
+                animation-delay: 0s;
+            }
+        
+            /* Pause animation on hover */
+            .testimonial-container:hover .animate-scroll {
+                animation-play-state: paused;
+            }
+        </style>
+        
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                const slider = document.getElementById('testimonialSlider');
+                const testimonials = document.querySelectorAll('.testimonial-wrapper > div');
+                
+                // Duplicate all testimonials to ensure continuous scrolling
+                testimonials.forEach(testimonial => {
+                    const clone = testimonial.cloneNode(true);
+                    slider.appendChild(clone);
+                });
+                
+                // Set animation duration based on number of testimonials
+                const numTestimonials = testimonials.length;
+                slider.style.animationDuration = (numTestimonials * 2) + 's'; // 3 seconds per testimonial
+            });
+        </script>
+    </div>
+</section>
+
+<!-- Instagram Feed Section -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-bold mb-4">Follow Us on Instagram</h2>
+            <p class="text-gray-600">@elitekitchen</p>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <img src="{% static 'images/dining-room.jpeg' %}" alt="Instagram 1" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
+            <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Instagram 2" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
+            <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Instagram 3" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
+            <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Instagram 4" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
+        </div>
+    </div>
+</section>
+
+<!-- Newsletter & Reservation CTA -->
+<section class="py-16 bg-gray-900 text-white">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <!-- Newsletter -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <p class="text-gray-300 mb-6">Stay updated with our latest offers and events</p>
+                <form class="flex flex-col md:flex-row gap-4">
+                    <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-full bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-500">
+                    <button type="submit" class="bg-yellow-500 text-black font-semibold px-8 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+            <!-- Reservation CTA -->
+            <div class="text-center md:text-left">
+                <h3 class="text-2xl font-bold mb-4">Make a Reservation</h3>
+                <p class="text-gray-300 mb-6">Book your table now for an unforgettable dining experience</p>
+                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    Book a Table
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+<!-- <link rel="stylesheet" href="{%static 'css/index.css' %}">
+<script src="{% static 'js/script.js' %}"></script> -->
+
