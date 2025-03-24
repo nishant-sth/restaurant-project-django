@@ -49,14 +49,14 @@ def book(request):
             
             # Prepare reservation details for QR code
             qr_data = f"""
-Restaurant Reservation
-----------------------
-Name: {form.cleaned_data['name']}
-Date: {form.cleaned_data['booking_date']}
-Guests: {form.cleaned_data['no_of_guests']}
-Reservation ID: {reservation.id}
-Phone Number: {form.cleaned_data['phone_number']}
-"""
+            Restaurant Reservation
+            ----------------------
+            Name: {form.cleaned_data['name']}
+            Date: {form.cleaned_data['booking_date']}
+            Guests: {form.cleaned_data['no_of_guests']}
+            Reservation ID: {reservation.id}
+            Phone Number: {form.cleaned_data['phone_number']}
+            """
             # Generate QR code
             qr = qrcode.QRCode(version=1, box_size=10, border=4)
             qr.add_data(qr_data)

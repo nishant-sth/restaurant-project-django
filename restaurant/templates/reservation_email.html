@@ -47,6 +47,7 @@
 </head>
 <body>
     <div class="container">
+        <h2>Dear, {{reservation.name}} </h2>
         <h2>Thank you for your reservation!</h2>
         <p>This email confirms your upcoming reservation with us.</p>
         
@@ -62,7 +63,8 @@
         <div class="qr-code">
             <h4>Your QR Code:</h4>
             <p>Present this at the restaurant for quick check-in:</p>
-            <img src="cid:reservation_qr.png" alt="Reservation QR Code">
+
+            <img src="cid:reservation_qr" alt="Reservation QR Code">
         </div>
         
         <div class="footer">
