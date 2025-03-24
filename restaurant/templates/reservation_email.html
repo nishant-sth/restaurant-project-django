@@ -1,53 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            background-color: #fff;
-            margin: 20px auto;
-            padding: 20px;
-            max-width: 600px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h2 {
-            color: #212321;
-        }
-        .details {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
-        .details h3 {
-            margin-top: 0;
-        }
-        .qr-code {
-            text-align: center;
-            margin-top: 20px;
-        }
-        .qr-code img {
-            width: 200px;
-            border-radius: 8px;
-        }
-        .footer {
-            margin-top: 20px;
-            text-align: center;
-            font-size: 0.9em;
-            color: #777;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" href="../static/css/reservation.css">
 </head>
 <body>
     <div class="container">
-        <h2>Dear, {{reservation.name}} </h2>
+        <h2>Dear {{reservation.name}},</h2>
         <h2>Thank you for your reservation!</h2>
         <p>This email confirms your upcoming reservation with us.</p>
         
@@ -58,17 +19,18 @@
             <p><strong>Number of guests:</strong> {{ reservation.no_of_guests }}</p>
             <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
             <p><strong>Phone Number:</strong> {{ reservation.phone_number }}</p>
+            <p><strong>Email:</strong> {{ reservation.email }}</p>
         </div>
         
         <div class="qr-code">
             <h4>Your QR Code:</h4>
             <p>Present this at the restaurant for quick check-in:</p>
-
-            <img src="cid:reservation_qr" alt="Reservation QR Code">
+            <!-- <img src="cid:reservation_qr" alt="Reservation QR Code"> -->
         </div>
         
         <div class="footer">
             <p>We look forward to serving you!</p>
+            <a href="tel:+1234567890" class="button">Contact Us</a>
             <small>If you need to modify your reservation, please contact us at +1234567890</small>
         </div>
     </div>
