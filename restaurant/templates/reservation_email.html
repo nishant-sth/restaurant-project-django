@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: #fff;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        .details {
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .details h3 {
+            margin-top: 0;
+        }
+        .qr-code {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .qr-code img {
+            width: 200px;
+            border-radius: 8px;
+        }
+        .footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
 <body>
-    <h2>Thank you for your reservation!</h2>
-    <p>This email confirms your upcoming reservation with us.</p>
-    
-    <div style="border: 1px solid #ddd; padding: 15px; max-width: 500px;">
-        <h3>Reservation Details</h3>
-        <p><strong>Name:</strong> {{ reservation.name }}</p>
-        <p><strong>Date & Time:</strong> {{ reservation.booking_date }}</p>
-        <p><strong>Number of guests:</strong> {{ reservation.no_of_guests }}</p>
-        <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
+    <div class="container">
+        <h2>Thank you for your reservation!</h2>
+        <p>This email confirms your upcoming reservation with us.</p>
+        
+        <div class="details">
+            <h3>Reservation Details</h3>
+            <p><strong>Name:</strong> {{ reservation.name }}</p>
+            <p><strong>Date & Time:</strong> {{ reservation.booking_date }}</p>
+            <p><strong>Number of guests:</strong> {{ reservation.no_of_guests }}</p>
+            <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
+        </div>
+        
+        <div class="qr-code">
+            <h4>Your QR Code:</h4>
+            <p>Present this at the restaurant for quick check-in:</p>
+            <img src="cid:reservation_qr.png" alt="Reservation QR Code">
+        </div>
+        
+        <div class="footer">
+            <p>We look forward to serving you!</p>
+            <small>If you need to modify your reservation, please contact us at +1234567890</small>
+        </div>
     </div>
-    
-    <div style="margin-top: 20px;">
-        <h4>Your QR Code:</h4>
-        <p>Present this at the restaurant for quick check-in:</p>
-        <img src="cid:reservation_qr.png" alt="Reservation QR Code" style="width: 200px;">
-    </div>
-    
-    <p style="margin-top: 20px;">
-        We look forward to serving you!<br>
-        <small>If you need to modify your reservation, please contact us at +1234567890</small>
-    </p>
 </body>
 </html>
