@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Thank you for your reservation!</h2>
+    <p>This email confirms your upcoming reservation with us.</p>
+    
+    <div style="border: 1px solid #ddd; padding: 15px; max-width: 500px;">
+        <h3>Reservation Details</h3>
+        <p><strong>Name:</strong> {{ reservation.name }}</p>
+        <p><strong>Date & Time:</strong> {{ reservation.booking_date }}</p>
+        <p><strong>Number of guests:</strong> {{ reservation.no_of_guests }}</p>
+        <p><strong>Reservation ID:</strong> {{ reservation.id }}</p>
+    </div>
+    
+    <div style="margin-top: 20px;">
+        <h4>Your QR Code:</h4>
+        <p>Present this at the restaurant for quick check-in:</p>
+        <img src="cid:reservation_qr.png" alt="Reservation QR Code" style="width: 200px;">
+    </div>
+    
+    <p style="margin-top: 20px;">
+        We look forward to serving you!<br>
+        <small>If you need to modify your reservation, please contact us at +1234567890</small>
+    </p>
+</body>
+</html>
