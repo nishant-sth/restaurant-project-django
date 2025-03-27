@@ -106,7 +106,7 @@ class GeneratePdf(View):
             booking = Booking.objects.get(id=booking_id)
             
             # Generate barcode
-            booking_code = f"BK{booking.id:04d}"
+            booking_code = f"BK{booking.id:04d}" #booking code
             buffer = io.BytesIO()
             Code128(booking_code, writer=ImageWriter()).write(buffer)
             barcode_data = base64.b64encode(buffer.getvalue()).decode()
