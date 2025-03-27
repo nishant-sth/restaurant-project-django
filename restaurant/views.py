@@ -72,10 +72,10 @@ def send_reservation_confirmation(reservation, form_data):
     })
     
     email = EmailMessage(
-        'Reservation Confirmation',
-        html_content,
-        'settings.EMAIL_HOST_USER',
-        [form_data['email']],
+        'Reservation Confirmation', #subject
+        html_content, #body
+        'settings.EMAIL_HOST_USER', #sender email address
+        [form_data['email']], # email address to the recipient list
     )
     email.content_subtype = "html"
     email.attach('reservation_qr.png', buffer.getvalue(), 'image/png')
