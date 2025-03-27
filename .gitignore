@@ -33,6 +33,3 @@ env/
 .DS_Store
 Thumbs.db
 
-# Cursor specific files
-.cursorignore
-.cursor/
