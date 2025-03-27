@@ -1,2 +1,12 @@
 .env
 staticfiles
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+db.sqlite3
+db_backup.sqlite3
+.cursorignore
