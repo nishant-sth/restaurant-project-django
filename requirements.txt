@@ -1,0 +1,51 @@
+# Core Dependencies
+Django==5.1.7
+djangorestframework==3.14.0
+python-dotenv==1.0.1
+mysqlclient==2.2.4
+
+# PDF Generation
+xhtml2pdf==0.2.13
+reportlab==4.1.0
+
+# Barcode Generation
+python-barcode==0.15.1
+Pillow==10.2.0
+
+# Email Support
+django-anymail[smtp]==10.2
+
+# Development Tools
+django-debug-toolbar==4.3.0
+pytest==8.0.2
+pytest-django==4.8.0
+coverage==7.4.3
+
+# Security
+django-cors-headers==4.3.1
+django-csp==3.7
+
+# API Documentation
+drf-yasg==1.21.7
+
+# Caching
+django-redis==5.4.0
+
+# Forms
+django-crispy-forms==2.1
+crispy-bootstrap5==2024.2
+
+# Image Processing
+Pillow==10.2.0
+
+# Date/Time Handling
+pytz==2024.1
+
+# Testing
+factory-boy==3.3.0
+faker==22.6.0
+
+# Code Quality
+flake8==7.0.0
+black==24.2.0
+isort==5.13.2
