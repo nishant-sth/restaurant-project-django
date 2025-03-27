@@ -120,7 +120,7 @@ class GeneratePdf(View):
             
             if pdf := render_to_pdf('pdf.html', context):
                 response = HttpResponse(pdf, content_type='application/pdf')
-                filename = f"EliteKitchen_Booking_{booking.id}.pdf"
+                filename = f"EliteKitchen_Booking_{booking.name}.pdf"
                 
                 # Check if download parameter is present
                 if request.GET.get('download'):
