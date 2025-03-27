@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Elite Kitchen - Booking Confirmation</title>
+    <link rel="stylesheet" href="../static/css/pdf.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Elite Kitchen</h1>
+        <p>Booking Confirmation</p>
+    </div>
+
+    <div class="content">
+        <div class="booking-info">
+            <h2>Reservation Details</h2>
+            <div class="info-grid">
+                <div class="info-item">
+                    <span class="info-label">Booking ID:</span>
+                    <span class="info-value">#{{ booking.id }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Name:</span>
+                    <span class="info-value">{{ booking.name }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Date:</span>
+                    <span class="info-value">{{ booking.booking_date|date:"F d, Y" }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Time:</span>
+                    <span class="info-value">{{ booking.booking_time }}</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Guests:</span>
+                    <span class="info-value">{{ booking.no_of_guests }} people</span>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Status:</span>
+                    <span class="status-badge">Confirmed</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="barcode-section">
+            <h3>Your Booking Code</h3>
+            <p class="booking-code">{{ booking_code }}</p>
+            <img src="data:image/png;base64,{{ barcode }}" alt="Booking Barcode">
+            <p>Show this barcode at the restaurant entrance for quick check-in</p>
+        </div>
+
+        <div class="contact-info">
+            <p><strong>Contact Information:</strong></p>
+            <p>Phone: {{ booking.phone_number }}</p>
+            <p>Email: {{ booking.email }}</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Generated on: {{ today|date:"F d, Y" }}</p>
+        <p>© {{ today|date:"Y" }} Elite Kitchen. All rights reserved.</p>
+        <p>Bhakta Marga, Kathmandu, Nepal | +977 9818000000</p>
+    </div>
+</body>
+</html>

@@ -16,6 +16,14 @@
             {% for message in messages %}
             <div class="p-4 rounded-md {% if message.tags == 'success' %}bg-green-100 text-green-700{% else %}bg-red-100 text-red-700{% endif %}">
                 {{ message }}
+                {% if message.tags == 'success' and booking_id %}
+                <div class="mt-4">
+                    <a href="{% url 'booking_pdf' booking_id=booking_id %}" 
+                        class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                        Download Booking Confirmation
+                    </a>
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
         </div>
