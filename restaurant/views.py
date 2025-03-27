@@ -12,7 +12,6 @@ from django.views import View
 from .utils import render_to_pdf
 from datetime import datetime
 import base64
-import barcode
 from barcode.writer import ImageWriter
 from barcode import Code128
 
