@@ -2,6 +2,7 @@ from django import forms
 from .models import Booking
 from django.utils import timezone
 from datetime import datetime
+import re
 
 class BookingForm(forms.ModelForm):
     class Meta:
@@ -21,6 +22,24 @@ class BookingForm(forms.ModelForm):
         if not name or len(name.strip()) < 2:
             raise forms.ValidationError("Name must be at least 2 characters long")
         return name.strip()
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not email:
+            raise forms.ValidationError("Email is required")
+        
+        # Basic email format validation
+        email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        if not re.match(email_pattern, email):
+            raise forms.ValidationError("Please enter a valid email address")
+        
+        # Check for common disposable email domains
+        disposable_domains = ['tempmail.com', 'throwawaymail.com', 'tempmailaddress.com']
+        domain = email.split('@')[1].lower()
+        if domain in disposable_domains:
+            raise forms.ValidationError("Please use a permanent email address")
+        
+        return email.lower()
 
     def clean_phone_number(self):
         phone = self.cleaned_data.get('phone_number')
