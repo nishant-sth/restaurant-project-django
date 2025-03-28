@@ -1,5 +1,6 @@
 from django import forms
 from .models import Booking
+from django.utils import timezone
 from datetime import datetime
 
 class BookingForm(forms.ModelForm):
@@ -29,7 +30,7 @@ class BookingForm(forms.ModelForm):
 
     def clean_booking_date(self):
         booking_date = self.cleaned_data.get('booking_date')
-        now = datetime.now()
+        now = timezone.now()
         
         if booking_date < now:
             raise forms.ValidationError("Booking date cannot be in the past")
