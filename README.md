@@ -1,4 +1,4 @@
-# Elite Kitchen - Restaurant Management System
+# Kunama- Restaurant Management System (Work In Progress)
 
 A comprehensive Django-based restaurant management system that helps streamline restaurant operations, manage orders, and handle customer interactions efficiently.
 
