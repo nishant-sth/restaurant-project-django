@@ -1,25 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block content %}
-<!-- Hero Section -->
-<section class="relative h-screen">
-    <!-- Background Image -->
+<section class="relative h-screen flex items-center justify-center">
     <div class="absolute inset-0">
         <img src="{% static 'images/home.jpg' %}" alt="Restaurant Background" class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
     </div>
-    
-    <!-- Hero Content -->
-    <div class="relative h-full flex items-center justify-center text-center text-white px-4">
+
+    <div class="relative h-full flex items-center justify-center text-center text-white px-4 z-10">
         <div class="max-w-4xl">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 font-cursive">Serving You Love</h1>
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">The Best Tasting Experience!</h2>
-            <p class="text-xl mb-8 text-gray-200">Discover an unforgettable fine dining experience located in Nepal. We have a passionate elegance and the most luxurious meals to enjoy.</p>
-            <div class="space-x-4">
-                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4 font-serif leading-tight">Serving You Love</h1>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-yellow-300">The Best Tasting Experience!</h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed text-balance">Discover an unforgettable fine dining experience located in Kathmandu, Nepal. We offer passionate elegance and the most luxurious meals to enjoy.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-10 py-4 rounded-full hover:bg-yellow-400 transition-colors duration-300 text-lg shadow-lg">
                     BOOK A TABLE
                 </a>
-                <a href="{% url 'menu' %}" class="inline-block bg-transparent border-2 border-white text-white font-semibold px-8 py-3 rounded-full hover:bg-white/10 transition-colors duration-300">
+                <a href="{% url 'menu' %}" class="inline-block bg-transparent border-2 border-white text-white font-semibold px-10 py-4 rounded-full hover:bg-white/10 transition-colors duration-300 text-lg shadow-lg">
                     VIEW MENU
                 </a>
             </div>
@@ -27,25 +25,24 @@
     </div>
 </section>
 
-<!-- Opening Hours & Location Strip -->
-<section class="bg-yellow-500 text-black py-4">
+<section class="bg-yellow-500 text-black py-6">
     <div class="container mx-auto px-4">
-        <div class="flex flex-wrap justify-center items-center gap-8 text-center">
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <div class="flex flex-wrap justify-center items-center gap-y-4 gap-x-8 text-center text-lg">
+            <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span class="font-semibold">Open Today: 12:00 PM - 11:00 PM</span>
             </div>
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
                 <span class="font-semibold">Bhakta Marga, Kathmandu, Nepal</span>
             </div>
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div class="flex items-center space-x-3">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 <span class="font-semibold">+977 9818000000</span>
@@ -54,80 +51,72 @@
     </div>
 </section>
 
-<!-- Features Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="text-center">
+            <div class="text-center p-4">
                 <div class="mb-4">
-                    <img src="{% static 'images/quality-food.jpg' %}" alt="Quality Food" class="w-50 h-40 mx-auto rounded-full object-cover">
+                    <img src="{% static 'images/quality-food.jpg' %}" alt="Quality Food" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md flex-shrink-0">
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Quality Food</h3>
-                <p class="text-gray-600">Experience the finest ingredients prepared with passion</p>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800">Quality Food</h3>
+                <p class="text-gray-600 leading-relaxed">Experience the finest, locally-sourced ingredients prepared with passion and precision.</p>
             </div>
-            
-            <!-- Feature 2 -->
-            <div class="text-center">
+
+            <div class="text-center p-4">
                 <div class="mb-4">
-                    <img src="{% static 'images/master-cheif.jpg' %}" alt="Master Chefs" class="w-50 h-40 mx-auto rounded-full object-cover">
+                    <img src="{% static 'images/master-cheif.jpg' %}" alt="Master Chefs" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md flex-shrink-0">
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Master Chefs</h3>
-                <p class="text-gray-600">Our expert chefs create culinary masterpieces</p>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800">Master Chefs</h3>
+                <p class="text-gray-600 leading-relaxed">Our expert chefs craft culinary masterpieces with innovative flair and time-honored techniques.</p>
             </div>
-            
-            <!-- Feature 3 -->
-            <div class="text-center">
+
+            <div class="text-center p-4">
                 <div class="mb-4">
-                    <img src="{% static 'images/atomsphere.jpg' %}" alt="Perfect Atmosphere" class="w-50 h-40 mx-auto rounded-full object-cover">
+                    <img src="{% static 'images/atomsphere.jpg' %}" alt="Perfect Atmosphere" class="w-40 h-40 mx-auto rounded-full object-cover shadow-md flex-shrink-0">
                 </div>
-                <h3 class="text-xl font-semibold mb-2">Perfect Atmosphere</h3>
-                <p class="text-gray-600">Enjoy your meal in our elegant and comfortable setting</p>
+                <h3 class="text-2xl font-bold mb-2 text-gray-800">Perfect Atmosphere</h3>
+                <p class="text-gray-600 leading-relaxed">Enjoy your meal in our elegant, comfortable, and sophisticated setting, perfect for any occasion.</p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Special Offers Section -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">Special Offers</h2>
-            <p class="text-gray-600">Discover our exclusive deals and seasonal specials</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Special Offers</h2>
+            <p class="text-xl text-gray-600">Discover our exclusive deals and seasonal specials crafted just for you.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- Offer 1 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
                 <img src="{% static 'images/dining-room.jpeg' %}" alt="Weekend Brunch" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Weekend Brunch Special</h3>
-                    <p class="text-gray-600 mb-4">Enjoy our exclusive weekend brunch with complimentary champagne</p>
-                    <p class="text-yellow-500 font-bold text-lg mb-4">$35 per person</p>
-                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Weekend Brunch Special</h3>
+                    <p class="text-gray-600 mb-4">Enjoy our exclusive weekend brunch with complimentary champagne, available every Saturday and Sunday.</p>
+                    <p class="text-yellow-600 font-bold text-xl mb-4">$35 per person</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
                         Book Now
                     </a>
                 </div>
             </div>
-            <!-- Offer 2 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
                 <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Chef's Special" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Chef's Tasting Menu</h3>
-                    <p class="text-gray-600 mb-4">5-course tasting menu with wine pairing</p>
-                    <p class="text-yellow-500 font-bold text-lg mb-4">$89 per person</p>
-                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Chef's Tasting Menu</h3>
+                    <p class="text-gray-600 mb-4">An exquisite 5-course tasting menu with expertly curated wine pairing, a true culinary adventure.</p>
+                    <p class="text-yellow-600 font-bold text-xl mb-4">$89 per person</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
                         Book Now
                     </a>
                 </div>
             </div>
-            <!-- Offer 3 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
                 <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Date Night" class="w-full h-48 object-cover">
                 <div class="p-6">
-                    <h3 class="text-xl font-bold mb-2">Date Night Special</h3>
-                    <p class="text-gray-600 mb-4">3-course dinner for two with a bottle of wine</p>
-                    <p class="text-yellow-500 font-bold text-lg mb-4">$120 per couple</p>
-                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Romantic Date Night Special</h3>
+                    <p class="text-gray-600 mb-4">A delightful 3-course dinner for two, complete with a complimentary bottle of premium wine.</p>
+                    <p class="text-yellow-600 font-bold text-xl mb-4">$120 per couple</p>
+                    <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
                         Book Now
                     </a>
                 </div>
@@ -136,154 +125,175 @@
     </div>
 </section>
 
-<!-- About Preview Section with Chef -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-                <h2 class="text-4xl font-bold">Welcome to Elite Kitchen</h2>
-                <p class="text-gray-600 leading-relaxed">
-                    Experience the authentic flavors of Mediterranean cuisine in a modern and elegant setting. Our restaurant combines traditional recipes with contemporary cooking techniques to create unforgettable dining experiences.
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-800">Welcome to Kunama</h2>
+                <p class="text-gray-600 leading-relaxed text-lg text-balance">
+                    Experience the authentic flavors of Mediterranean cuisine in a modern and elegant setting. Our restaurant combines traditional recipes with contemporary cooking techniques to create truly unforgettable dining experiences. We pride ourselves on passion, precision, and perfection.
                 </p>
                 <div class="space-y-4">
-                    <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Fresh, locally-sourced ingredients</span>
+                        <span class="text-lg text-gray-700">Fresh, locally-sourced ingredients selected daily</span>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Award-winning wine selection</span>
+                        <span class="text-lg text-gray-700">Award-winning wine selection to complement your meal</span>
                     </div>
-                    <div class="flex items-center space-x-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div class="flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-yellow-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                         </svg>
-                        <span>Private dining rooms available</span>
+                        <span class="text-lg text-gray-700">Private dining rooms available for intimate gatherings</span>
                     </div>
                 </div>
-                <a href="{% url 'about' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                <a href="{% url 'about' %}" class="inline-block bg-yellow-500 text-black font-semibold px-10 py-4 rounded-full hover:bg-yellow-400 transition-colors duration-300 text-lg shadow-lg">
                     Learn More
                 </a>
             </div>
             <div class="relative">
-                <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Our Chef" class="rounded-lg shadow-xl">
-                <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg">
-                    <p class="font-bold text-lg">Chef Michael Anderson</p>
-                    <p class="text-gray-600">Executive Chef</p>
+                <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Our Chef" class="rounded-lg shadow-xl w-full h-full object-cover">
+                <div class="absolute -bottom-6 md:-bottom-8 right-4 bg-white p-4 rounded-lg shadow-2xl text-center md:text-left">
+                    <p class="font-bold text-xl md:text-2xl text-gray-800">Chef Michael Anderson</p>
+                    <p class="text-gray-600 text-lg">Executive Chef</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Testimonials Section -->
 <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">What Our Guests Say</h2>
-            <p class="text-gray-600">Read reviews from our valued customers</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">What Our Guests Say</h2>
+            <p class="text-xl text-gray-600">Read reviews from our valued customers and discover their experiences.</p>
         </div>
-        <div class="testimonial-container overflow-hidden relative w-full max-w-5xl mx-auto">
-            <!-- Outer container with width set to show 4 testimonials -->
-            <div class="relative overflow-hidden">
-                <!-- Inner scrolling container -->
-                <div class="testimonial-wrapper flex space-x-4 animate-scroll" id="testimonialSlider">
+        <div class="testimonial-container overflow-hidden relative w-full max-w-7xl mx-auto">
+            <div class="relative overflow-hidden py-4"> <div class="testimonial-wrapper flex space-x-4 animate-scroll" id="testimonialSlider">
                     {% for data in testimonials %}
-                        <div class="bg-white p-6 rounded-lg shadow-lg min-w-[310px]">
-                            <div class="flex items-center mb-4">
-                                <div class="text-yellow-500">
+                        <div class="bg-white p-6 rounded-lg shadow-xl border border-gray-100 flex-shrink-0 transform hover:scale-105 transition-transform duration-300
+                            w-full md:w-1/2 lg:w-1/3 xl:w-1/4"> <div class="flex items-center mb-4">
+                                <div class="text-yellow-500 text-xl flex-shrink-0">
                                     {% for _ in "x"|rjust:data.rating %}★{% endfor %}
                                 </div>
                             </div>
-                            <p class="text-gray-600 mb-4">"{{ data.testimonial }}"</p>
-                            <div class="font-semibold">{{ data.name }}</div>
+                            <p class="text-gray-700 mb-4 text-lg leading-relaxed italic line-clamp-4">"{{ data.testimonial }}"</p>
+                            <div class="font-bold text-lg text-gray-800 mt-4">{{ data.name }}</div>
                             <div class="text-sm text-gray-500">{{ data.role }}</div>
                         </div>
                     {% endfor %}
                 </div>
             </div>
         </div>
-        
+
         <style>
-            @keyframes scroll {
+            /* Custom CSS variables for precise animation */
+            .testimonial-wrapper {
+                animation: scroll-testimonials var(--animation-duration) linear infinite;
+            }
+
+            @keyframes scroll-testimonials {
                 0% {
                     transform: translateX(0);
                 }
                 100% {
-                    transform: translateX(calc(-310px - 2rem)); /* Width of one testimonial + margin */
+                    transform: translateX(calc(-1 * (var(--card-width) + var(--gap-width))));
                 }
             }
-        
-            .animate-scroll {
-                animation: scroll 40s linear infinite;
-                animation-delay: 0s;
-            }
-        
+
             /* Pause animation on hover */
             .testimonial-container:hover .animate-scroll {
                 animation-play-state: paused;
             }
         </style>
-        
+
         <script>
             document.addEventListener('DOMContentLoaded', function() {
                 const slider = document.getElementById('testimonialSlider');
-                const testimonials = document.querySelectorAll('.testimonial-wrapper > div');
-                
-                // Duplicate all testimonials to ensure continuous scrolling
-                testimonials.forEach(testimonial => {
-                    const clone = testimonial.cloneNode(true);
+                const originalTestimonials = Array.from(document.querySelectorAll('.testimonial-wrapper > div'));
+                const clonesNeeded = originalTestimonials.length; 
+
+                for (let i = 0; i < clonesNeeded; i++) {
+                    const clone = originalTestimonials[i].cloneNode(true);
                     slider.appendChild(clone);
+                }
+
+                // Function to update CSS variables and animation duration
+                function updateSliderDimensions() {
+                    const firstTestimonial = slider.querySelector('.testimonial-wrapper > div');
+                    if (firstTestimonial) {
+                        // Get the actual rendered width of one card
+                        const cardWidth = firstTestimonial.offsetWidth;
+                        // Get the gap value from the parent flex container's computed style
+                        const gapWidth = parseFloat(getComputedStyle(slider).gap) || 16; // Default to 16px (for space-x-4)
+
+                        // Set CSS custom properties for animation
+                        slider.style.setProperty('--card-width', `${cardWidth}px`);
+                        slider.style.setProperty('--gap-width', `${gapWidth}px`);
+
+                        // Calculate animation duration dynamically
+                        const speedPerCard = 2; 
+                        const totalAnimationDuration = originalTestimonials.length * speedPerCard;
+                        slider.style.setProperty('--animation-duration', `${totalAnimationDuration}s`);
+                    }
+                }
+
+                // Initial setup
+                updateSliderDimensions();
+
+                // Re-calculate on window resize to ensure responsiveness of animation
+                let resizeTimer;
+                window.addEventListener('resize', () => {
+                    clearTimeout(resizeTimer);
+                    slider.style.animationPlayState = 'paused'; // Pause animation during resize
+                    resizeTimer = setTimeout(() => {
+                        updateSliderDimensions();
+                        slider.style.animationPlayState = 'running'; // Resume animation
+                    }, 250); // Debounce resize for performance
                 });
-                
-                // Set animation duration based on number of testimonials
-                const numTestimonials = testimonials.length;
-                slider.style.animationDuration = (numTestimonials * 2) + 's'; // 3 seconds per testimonial
             });
         </script>
     </div>
 </section>
 
-<!-- Instagram Feed Section -->
 <section class="py-16 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12">
-            <h2 class="text-4xl font-bold mb-4">Follow Us on Instagram</h2>
-            <p class="text-gray-600">@elitekitchen</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">Follow Us on Instagram</h2>
+            <p class="text-xl text-gray-600">@elitekitchen - Share your moments with us!</p>
         </div>
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src="{% static 'images/dining-room.jpeg' %}" alt="Instagram 1" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
-            <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Instagram 2" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
-            <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Instagram 3" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
-            <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Instagram 4" class="w-full h-64 object-cover rounded-lg hover:opacity-75 transition-opacity duration-300">
+            <img src="{% static 'images/dining-room.jpeg' %}" alt="Instagram 1" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity duration-300 cursor-pointer">
+            <img src="{% static 'images/fresh-ingredients.jpeg' %}" alt="Instagram 2" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity duration-300 cursor-pointer">
+            <img src="{% static 'images/chef-cooking.jpeg' %}" alt="Instagram 3" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity duration-300 cursor-pointer">
+            <img src="{% static 'images/restaurant-interior.jpeg' %}" alt="Instagram 4" class="w-full h-64 object-cover rounded-lg shadow-md hover:opacity-75 transition-opacity duration-300 cursor-pointer">
         </div>
     </div>
 </section>
 
-<!-- Newsletter & Reservation CTA -->
 <section class="py-16 bg-gray-900 text-white">
     <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <!-- Newsletter -->
             <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold mb-4">Subscribe to Our Newsletter</h3>
-                <p class="text-gray-300 mb-6">Stay updated with our latest offers and events</p>
-                <form class="flex flex-col md:flex-row gap-4">
-                    <input type="email" placeholder="Enter your email" class="px-4 py-2 rounded-full bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-yellow-500">
-                    <button type="submit" class="bg-yellow-500 text-black font-semibold px-8 py-2 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                <h3 class="text-3xl font-bold mb-4">Subscribe to Our Newsletter</h3>
+                <p class="text-gray-300 mb-6 text-lg">Stay updated with our latest offers, exciting events, and new menu additions.</p>
+                <form class="flex flex-col sm:flex-row gap-4 max-w-lg md:max-w-none mx-auto sm:mx-0">
+                    <input type="email" placeholder="Enter your email" class="flex-grow px-5 py-3 rounded-full bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-transparent transition-all duration-200" required>
+                    <button type="submit" class="bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300 shadow-md">
                         Subscribe
                     </button>
                 </form>
             </div>
-            <!-- Reservation CTA -->
             <div class="text-center md:text-left">
-                <h3 class="text-2xl font-bold mb-4">Make a Reservation</h3>
-                <p class="text-gray-300 mb-6">Book your table now for an unforgettable dining experience</p>
-                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-8 py-3 rounded-full hover:bg-yellow-400 transition-colors duration-300">
+                <h3 class="text-3xl font-bold mb-4">Make a Reservation Today!</h3>
+                <p class="text-gray-300 mb-6 text-lg">Book your table now for an unforgettable fine dining experience at KUNAMA.</p>
+                <a href="{% url 'book' %}" class="inline-block bg-yellow-500 text-black font-semibold px-10 py-4 rounded-full hover:bg-yellow-400 transition-colors duration-300 text-lg shadow-lg">
                     Book a Table
                 </a>
             </div>
@@ -291,6 +301,3 @@
     </div>
 </section>
 {% endblock %}
-<!-- <link rel="stylesheet" href="{%static 'css/index.css' %}">
-<script src="{% static 'js/script.js' %}"></script> -->
-
